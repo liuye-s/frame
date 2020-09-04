@@ -7,6 +7,7 @@ public class AuthUtil {
 
     public static CommonUser getUserInfo(Authentication authentication){
         if (authentication==null)
+
             return null;
 
         CommonUser commonUser = (CommonUser) authentication.getPrincipal();
