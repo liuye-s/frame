@@ -59,7 +59,7 @@ mybatis-plus:
 
 
 #之定义配置
-jxtele:
+liuye:
   security:
     clientProperties:
       signInPage: /signIn.html

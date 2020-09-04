@@ -10,11 +10,11 @@ import org.springframework.stereotype.Component;
  * @create: 2020-08-31 14:56
  **/
 @Component
-@ConfigurationProperties(prefix = "jxtele.security") ///配置注解表示这个类可以读取所有yml以 "jxtele.security"开头的配置项
+@ConfigurationProperties(prefix = "liuye.security") ///配置注解表示这个类可以读取所有yml以 "liuye.security"开头的配置项
 public class SecurityProperties {
 
     /**
-     * 浏览器环境配置 //jxtele.security.browser 读取到browser 对象里面
+     * 浏览器环境配置 //liuye.security.browser 读取到browser 对象里面
      */
     private ClientProperties clientProperties = new ClientProperties();
 

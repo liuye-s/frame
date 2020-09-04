@@ -30,7 +30,7 @@ public class SessionValidateCodeRepository implements ValidateCodeRepository {
     private SessionStrategy sessionStrategy = new HttpSessionSessionStrategy();
 
     /* (non-Javadoc)
-     * @see com.jxtele.security.core.validate.code.ValidateCodeRepository#save(org.springframework.web.context.request.ServletWebRequest, com.imooc.security.core.validate.code.ValidateCode, com.imooc.security.core.validate.code.ValidateCodeType)
+     * @see com.liuye.security.core.validate.code.ValidateCodeRepository#save(org.springframework.web.context.request.ServletWebRequest, com.imooc.security.core.validate.code.ValidateCode, com.imooc.security.core.validate.code.ValidateCodeType)
      */
     @Override
     public void save(ServletWebRequest request, ValidateCode code, ValidateCodeType validateCodeType) {
@@ -48,7 +48,7 @@ public class SessionValidateCodeRepository implements ValidateCodeRepository {
     }
 
     /* (non-Javadoc)
-     * @see com.jxtele.security.core.validate.code.ValidateCodeRepository#get(org.springframework.web.context.request.ServletWebRequest, com.imooc.security.core.validate.code.ValidateCodeType)
+     * @see com.liuye.security.core.validate.code.ValidateCodeRepository#get(org.springframework.web.context.request.ServletWebRequest, com.imooc.security.core.validate.code.ValidateCodeType)
      */
     @Override
     public ValidateCode get(ServletWebRequest request, ValidateCodeType validateCodeType) {
@@ -56,7 +56,7 @@ public class SessionValidateCodeRepository implements ValidateCodeRepository {
     }
 
     /* (non-Javadoc)
-     * @see com.jxtele.security.core.validate.code.ValidateCodeRepository#remove(org.springframework.web.context.request.ServletWebRequest, com.imooc.security.core.validate.code.ValidateCodeType)
+     * @see com.liuye.security.core.validate.code.ValidateCodeRepository#remove(org.springframework.web.context.request.ServletWebRequest, com.imooc.security.core.validate.code.ValidateCodeType)
      */
     @Override
     public void remove(ServletWebRequest request, ValidateCodeType codeType) {
