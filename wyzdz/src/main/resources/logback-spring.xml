@@ -21,7 +21,7 @@
     <contextName>webtest</contextName>
     <property name="LOG_PATH" value="./log" />
     <!--设置系统日志目录-->
-    <property name="APPDIR" value="iot_system" />
+    <property name="APPDIR" value="wyzdz" />
 
     <!-- 日志记录器，日期滚动记录 -->
     <appender name="FILEERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
