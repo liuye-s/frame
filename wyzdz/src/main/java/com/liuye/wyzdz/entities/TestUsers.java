@@ -1,6 +1,7 @@
 package com.liuye.wyzdz.entities;
 
 
+import com.liuye.common.authorize.rbac.entities.CommonUser;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,8 +21,9 @@ import java.util.Collection;
 @NoArgsConstructor
 @AllArgsConstructor
 @Accessors(chain=true) //链式
-public class TestUsers implements UserDetails {
+public class TestUsers  implements CommonUser {
 
+    private Long id;
 
     private String username;
 
@@ -61,5 +63,10 @@ public class TestUsers implements UserDetails {
     @Override
     public boolean isEnabled() {
         return true;
+    }
+
+    @Override
+    public Long getCommonUserId() {
+        return this.id;
     }
 }
