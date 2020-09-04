@@ -1,0 +1,116 @@
+===2020-09-04 09:02:46.760 INFO  com.liuye.WyzdzApplication Line:55  - Starting WyzdzApplication on MacBook-Pro.local with PID 21446 (/Users/liuhui/Documents/ideaTool/githubWorkSpace/frame/wyzdz/target/classes started by liuhui in /Users/liuhui/Documents/ideaTool/githubWorkSpace/frame)
+===2020-09-04 09:02:46.766 INFO  com.liuye.WyzdzApplication Line:651 - No active profile set, falling back to default profiles: default
+===2020-09-04 09:02:48.205 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-8080"]
+===2020-09-04 09:02:48.205 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+===2020-09-04 09:02:48.206 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.37]
+===2020-09-04 09:02:48.296 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Line:173 - Initializing Spring embedded WebApplicationContext
+===2020-09-04 09:02:48.545 INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure Line:56  - Init DruidDataSource
+===2020-09-04 09:02:49.059 INFO  com.alibaba.druid.pool.DruidDataSource Line:1002 - {dataSource-1} inited
+===2020-09-04 09:02:49.769 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Starting ProtocolHandler ["http-nio-8080"]
+===2020-09-04 09:02:49.821 INFO  com.liuye.WyzdzApplication Line:61  - Started WyzdzApplication in 3.816 seconds (JVM running for 4.36)
+===2020-09-04 09:08:56.912 INFO  com.alibaba.druid.pool.DruidDataSource Line:1885 - {dataSource-1} closing ...
+===2020-09-04 09:08:56.917 INFO  com.alibaba.druid.pool.DruidDataSource Line:1955 - {dataSource-1} closed
+===2020-09-04 09:37:18.374 INFO  com.liuye.WyzdzApplication Line:55  - Starting WyzdzApplication on MacBook-Pro.local with PID 22593 (/Users/liuhui/Documents/ideaTool/githubWorkSpace/frame/wyzdz/target/classes started by liuhui in /Users/liuhui/Documents/ideaTool/githubWorkSpace/frame)
+===2020-09-04 09:37:18.379 INFO  com.liuye.WyzdzApplication Line:651 - No active profile set, falling back to default profiles: default
+===2020-09-04 09:37:19.707 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-8080"]
+===2020-09-04 09:37:19.708 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+===2020-09-04 09:37:19.708 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.37]
+===2020-09-04 09:37:19.804 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Line:173 - Initializing Spring embedded WebApplicationContext
+===2020-09-04 09:37:20.071 INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure Line:56  - Init DruidDataSource
+===2020-09-04 09:37:20.573 INFO  com.alibaba.druid.pool.DruidDataSource Line:1002 - {dataSource-1} inited
+===2020-09-04 09:37:21.267 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Starting ProtocolHandler ["http-nio-8080"]
+===2020-09-04 09:37:21.316 INFO  com.liuye.WyzdzApplication Line:61  - Started WyzdzApplication in 3.612 seconds (JVM running for 4.974)
+===2020-09-04 09:37:41.347 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Line:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+===2020-09-04 09:43:18.602 INFO  com.liuye.security.client.BrowserSecurityController Line:60  - 引发跳转的请求是:http://localhost:8080/a.html
+===2020-09-04 09:43:39.525 INFO  com.liuye.security.core.validate.code.ValidateCodeFilter Line:99  - 校验请求(/authentication/form)中的验证码,验证码类型IMAGE
+===2020-09-04 09:43:39.525 INFO  com.liuye.security.core.validate.code.image.ImageCodeProcessor Line:104 - imageCode
+===2020-09-04 09:43:39.526 INFO  com.liuye.security.core.validate.code.ValidateCodeFilter Line:103 - 验证码校验通过
+===2020-09-04 09:43:39.826 INFO  com.liuye.security.client.authentication.AuthenticationSuccessHandler Line:56  - 登录成功
+===2020-09-04 09:45:32.118 INFO  com.alibaba.druid.pool.DruidDataSource Line:1885 - {dataSource-1} closing ...
+===2020-09-04 09:45:32.121 INFO  com.alibaba.druid.pool.DruidDataSource Line:1955 - {dataSource-1} closed
+===2020-09-04 09:45:35.064 INFO  com.liuye.WyzdzApplication Line:55  - Starting WyzdzApplication on MacBook-Pro.local with PID 23211 (/Users/liuhui/Documents/ideaTool/githubWorkSpace/frame/wyzdz/target/classes started by liuhui in /Users/liuhui/Documents/ideaTool/githubWorkSpace/frame)
+===2020-09-04 09:45:35.069 INFO  com.liuye.WyzdzApplication Line:651 - No active profile set, falling back to default profiles: default
+===2020-09-04 09:45:36.338 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-8080"]
+===2020-09-04 09:45:36.339 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+===2020-09-04 09:45:36.339 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.37]
+===2020-09-04 09:45:36.433 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Line:173 - Initializing Spring embedded WebApplicationContext
+===2020-09-04 09:45:36.664 INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure Line:56  - Init DruidDataSource
+===2020-09-04 09:45:37.124 INFO  com.alibaba.druid.pool.DruidDataSource Line:1002 - {dataSource-1} inited
+===2020-09-04 09:45:37.814 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Starting ProtocolHandler ["http-nio-8080"]
+===2020-09-04 09:45:37.865 INFO  com.liuye.WyzdzApplication Line:61  - Started WyzdzApplication in 3.6 seconds (JVM running for 4.152)
+===2020-09-04 09:45:43.641 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Line:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+===2020-09-04 09:47:34.577 INFO  com.alibaba.druid.pool.DruidDataSource Line:1885 - {dataSource-1} closing ...
+===2020-09-04 09:47:34.587 INFO  com.alibaba.druid.pool.DruidDataSource Line:1955 - {dataSource-1} closed
+===2020-09-04 09:47:37.345 INFO  com.liuye.WyzdzApplication Line:55  - Starting WyzdzApplication on MacBook-Pro.local with PID 23771 (/Users/liuhui/Documents/ideaTool/githubWorkSpace/frame/wyzdz/target/classes started by liuhui in /Users/liuhui/Documents/ideaTool/githubWorkSpace/frame)
+===2020-09-04 09:47:37.349 INFO  com.liuye.WyzdzApplication Line:651 - No active profile set, falling back to default profiles: default
+===2020-09-04 09:47:38.632 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-8080"]
+===2020-09-04 09:47:38.632 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+===2020-09-04 09:47:38.633 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.37]
+===2020-09-04 09:47:38.728 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Line:173 - Initializing Spring embedded WebApplicationContext
+===2020-09-04 09:47:38.969 INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure Line:56  - Init DruidDataSource
+===2020-09-04 09:47:39.421 INFO  com.alibaba.druid.pool.DruidDataSource Line:1002 - {dataSource-1} inited
+===2020-09-04 09:47:40.097 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Starting ProtocolHandler ["http-nio-8080"]
+===2020-09-04 09:47:40.147 INFO  com.liuye.WyzdzApplication Line:61  - Started WyzdzApplication in 3.464 seconds (JVM running for 3.997)
+===2020-09-04 09:47:44.365 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Line:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+===2020-09-04 09:49:38.376 INFO  com.alibaba.druid.pool.DruidDataSource Line:1885 - {dataSource-1} closing ...
+===2020-09-04 09:49:38.385 INFO  com.alibaba.druid.pool.DruidDataSource Line:1955 - {dataSource-1} closed
+===2020-09-04 09:49:44.341 INFO  com.liuye.WyzdzApplication Line:55  - Starting WyzdzApplication on MacBook-Pro.local with PID 23794 (/Users/liuhui/Documents/ideaTool/githubWorkSpace/frame/wyzdz/target/classes started by liuhui in /Users/liuhui/Documents/ideaTool/githubWorkSpace/frame)
+===2020-09-04 09:49:44.345 INFO  com.liuye.WyzdzApplication Line:651 - No active profile set, falling back to default profiles: default
+===2020-09-04 09:49:45.614 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-8080"]
+===2020-09-04 09:49:45.615 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+===2020-09-04 09:49:45.616 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.37]
+===2020-09-04 09:49:45.697 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Line:173 - Initializing Spring embedded WebApplicationContext
+===2020-09-04 09:49:45.927 INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure Line:56  - Init DruidDataSource
+===2020-09-04 09:49:46.376 INFO  com.alibaba.druid.pool.DruidDataSource Line:1002 - {dataSource-1} inited
+===2020-09-04 09:49:47.057 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Starting ProtocolHandler ["http-nio-8080"]
+===2020-09-04 09:49:47.107 INFO  com.liuye.WyzdzApplication Line:61  - Started WyzdzApplication in 3.559 seconds (JVM running for 4.267)
+===2020-09-04 09:49:56.638 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Line:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+===2020-09-04 09:50:11.625 INFO  com.liuye.security.core.validate.code.ValidateCodeFilter Line:99  - 校验请求(/authentication/form)中的验证码,验证码类型IMAGE
+===2020-09-04 09:50:11.626 INFO  com.liuye.security.core.validate.code.image.ImageCodeProcessor Line:104 - imageCode
+===2020-09-04 09:50:11.626 INFO  com.liuye.security.core.validate.code.ValidateCodeFilter Line:103 - 验证码校验通过
+===2020-09-04 09:50:11.636 INFO  com.liuye.security.client.authentication.AuthenctiationFailureHandler Line:51  - 登录失败
+===2020-09-04 09:50:20.394 INFO  com.liuye.security.core.validate.code.ValidateCodeFilter Line:99  - 校验请求(/authentication/form)中的验证码,验证码类型IMAGE
+===2020-09-04 09:50:20.394 INFO  com.liuye.security.core.validate.code.image.ImageCodeProcessor Line:104 - imageCode
+===2020-09-04 09:50:20.395 INFO  com.liuye.security.core.validate.code.ValidateCodeFilter Line:103 - 验证码校验通过
+===2020-09-04 09:50:20.398 INFO  com.liuye.security.client.authentication.AuthenticationSuccessHandler Line:56  - 登录成功
+===2020-09-04 09:51:37.199 INFO  com.alibaba.druid.pool.DruidDataSource Line:1885 - {dataSource-1} closing ...
+===2020-09-04 09:51:37.208 INFO  com.alibaba.druid.pool.DruidDataSource Line:1955 - {dataSource-1} closed
+===2020-09-04 09:51:41.434 INFO  com.liuye.WyzdzApplication Line:55  - Starting WyzdzApplication on MacBook-Pro.local with PID 23813 (/Users/liuhui/Documents/ideaTool/githubWorkSpace/frame/wyzdz/target/classes started by liuhui in /Users/liuhui/Documents/ideaTool/githubWorkSpace/frame)
+===2020-09-04 09:51:41.445 INFO  com.liuye.WyzdzApplication Line:651 - No active profile set, falling back to default profiles: default
+===2020-09-04 09:51:42.791 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-8080"]
+===2020-09-04 09:51:42.792 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+===2020-09-04 09:51:42.792 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.37]
+===2020-09-04 09:51:42.870 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Line:173 - Initializing Spring embedded WebApplicationContext
+===2020-09-04 09:51:43.100 INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure Line:56  - Init DruidDataSource
+===2020-09-04 09:51:43.581 INFO  com.alibaba.druid.pool.DruidDataSource Line:1002 - {dataSource-1} inited
+===2020-09-04 09:51:44.264 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Starting ProtocolHandler ["http-nio-8080"]
+===2020-09-04 09:51:44.316 INFO  com.liuye.WyzdzApplication Line:61  - Started WyzdzApplication in 3.669 seconds (JVM running for 4.235)
+===2020-09-04 09:51:48.018 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Line:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+===2020-09-04 09:53:32.442 INFO  com.alibaba.druid.pool.DruidDataSource Line:1885 - {dataSource-1} closing ...
+===2020-09-04 09:53:32.452 INFO  com.alibaba.druid.pool.DruidDataSource Line:1955 - {dataSource-1} closed
+===2020-09-04 09:53:34.892 INFO  com.liuye.WyzdzApplication Line:55  - Starting WyzdzApplication on MacBook-Pro.local with PID 23831 (/Users/liuhui/Documents/ideaTool/githubWorkSpace/frame/wyzdz/target/classes started by liuhui in /Users/liuhui/Documents/ideaTool/githubWorkSpace/frame)
+===2020-09-04 09:53:34.897 INFO  com.liuye.WyzdzApplication Line:651 - No active profile set, falling back to default profiles: default
+===2020-09-04 09:53:36.395 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-8080"]
+===2020-09-04 09:53:36.396 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+===2020-09-04 09:53:36.396 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.37]
+===2020-09-04 09:53:36.484 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Line:173 - Initializing Spring embedded WebApplicationContext
+===2020-09-04 09:53:36.734 INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure Line:56  - Init DruidDataSource
+===2020-09-04 09:53:37.220 INFO  com.alibaba.druid.pool.DruidDataSource Line:1002 - {dataSource-1} inited
+===2020-09-04 09:53:37.953 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Starting ProtocolHandler ["http-nio-8080"]
+===2020-09-04 09:53:38.009 INFO  com.liuye.WyzdzApplication Line:61  - Started WyzdzApplication in 3.831 seconds (JVM running for 4.353)
+===2020-09-04 09:53:47.469 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Line:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+===2020-09-04 10:09:51.447 INFO  com.alibaba.druid.pool.DruidDataSource Line:1885 - {dataSource-1} closing ...
+===2020-09-04 10:09:51.450 INFO  com.alibaba.druid.pool.DruidDataSource Line:1955 - {dataSource-1} closed
+===2020-09-04 10:41:19.831 INFO  com.liuye.WyzdzApplication Line:55  - Starting WyzdzApplication on localhost with PID 24350 (/Users/liuhui/Documents/ideaTool/githubWorkSpace/frame/wyzdz/target/classes started by liuhui in /Users/liuhui/Documents/ideaTool/githubWorkSpace/frame)
+===2020-09-04 10:41:19.835 INFO  com.liuye.WyzdzApplication Line:651 - No active profile set, falling back to default profiles: default
+===2020-09-04 10:41:21.066 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-8080"]
+===2020-09-04 10:41:21.066 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+===2020-09-04 10:41:21.067 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.37]
+===2020-09-04 10:41:21.137 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Line:173 - Initializing Spring embedded WebApplicationContext
+===2020-09-04 10:41:21.374 INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure Line:56  - Init DruidDataSource
+===2020-09-04 10:41:21.689 INFO  com.alibaba.druid.pool.DruidDataSource Line:1002 - {dataSource-1} inited
+===2020-09-04 10:41:22.325 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Starting ProtocolHandler ["http-nio-8080"]
+===2020-09-04 10:41:22.370 INFO  com.liuye.WyzdzApplication Line:61  - Started WyzdzApplication in 3.302 seconds (JVM running for 4.473)
+===2020-09-04 10:41:43.621 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Line:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+===2020-09-04 10:42:05.823 INFO  com.alibaba.druid.pool.DruidDataSource Line:1885 - {dataSource-1} closing ...
+===2020-09-04 10:42:05.829 INFO  com.alibaba.druid.pool.DruidDataSource Line:1955 - {dataSource-1} closed

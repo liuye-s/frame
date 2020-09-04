@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:dic="" xmlns:tree="">
+<head th:replace="common/common-head :: common_header(~{::title},~{::link},~{::script},~{::style})">
+    <title>$!{table.comment}详情查看</title>
+    <link rel="stylesheet" href="/assets/lib/iconfont/iconfont.css">
+
+    <style>
+
+
+    </style>
+
+    <script type="text/javascript" src="/js/utils.js"></script>
+    <script type="text/javascript">
+        $(function () {
+
+        });
+    </script>
+
+</head>
+<body>
+#set($paramObj = "$" + "{data.")
+#foreach($field in ${table.fields})
+#if(${field.keyFlag})
+<input type="hidden" id="id" name="id" th:if="${paramObj}${table.entityPath}}!=null and ${paramObj}${table.entityPath}.${field.propertyName}}!=null" th:value="${paramObj}${table.entityPath}?.${field.propertyName}}" />
+#break
+#end
+#end
+<div class="row">
+    <div class="col-xs-12">
+        <!-- PAGE CONTENT BEGINS -->
+        <div class="tabbable">
+
+            <div class="tab-content no-border padding-24">
+                <div id="details-tab-1" class="tab-pane fade active in">
+
+                    <div id="details-list-1" class="panel-group accordion-style1 accordion-style2">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <a href="#details-1-1"  data-toggle="collapse" class="accordion-toggle collapsed">
+                                    <i class="ace-icon fa fa-chevron-down smaller-80" data-icon-hide="ace-icon fa fa-chevron-down align-top" data-icon-show="ace-icon fa fa-chevron-right"></i>&nbsp;
+                                    $!{table.comment}信息
+                                </a>
+                            </div>
+
+                            <div class="panel-collapse collapse in" id="details-1-1">
+                                <div class="panel-body">
+                                    <table class="table table-bordered  table-label-row ">
+
+                                        #set($columnsCount=0)
+                                        #foreach($field in ${table.fields})
+                                        #if(!${field.keyFlag} && ${logicDeleteFieldName}!=${field.name})
+                                        #set($columnsCount=$columnsCount+1)
+                                        #if($columnsCount%2==1)
+                                        <tr>
+                                            <td width="100px">$!{field.comment}</td>
+                                            #if(${field.propertyType}=="Date" || ${field.propertyType}=="LocalDateTime" || ${field.propertyType}=="Timestamp")
+                                            <td class="form-group" th:text="${#dates.format(data.${table.entityPath}?.${field.propertyName}, 'yyyy-MM-dd HH:mm:ss') }"></td>
+                                            #elseif(${field.propertyType}=="LocalDate")
+                                            <td class="form-group" th:text="${#dates.format(data.${table.entityPath}?.${field.propertyName}, 'yyyy-MM-dd') }"></td>
+                                            #elseif(${field.propertyType}=="LocalTime")
+                                            <td class="form-group" th:text="${#dates.format(data.${table.entityPath}?.${field.propertyName}, 'HH:mm:ss') }"></td>
+                                            #else
+                                            <td class="form-group" th:text="${paramObj}${table.entityPath}?.${field.propertyName} }"></td>
+                                            #end
+                                        #else
+                                            <td width="100px">$!{field.comment}</td>
+                                            #if(${field.propertyType}=="Date" || ${field.propertyType}=="LocalDateTime" || ${field.propertyType}=="Timestamp")
+                                            <td class="form-group" th:text="${#dates.format(data.${table.entityPath}?.${field.propertyName}, 'yyyy-MM-dd HH:mm:ss') }"></td>
+                                            #elseif(${field.propertyType}=="LocalDate")
+                                            <td class="form-group" th:text="${#dates.format(data.${table.entityPath}?.${field.propertyName}, 'yyyy-MM-dd') }"></td>
+                                            #elseif(${field.propertyType}=="LocalTime")
+                                            <td class="form-group" th:text="${#dates.format(data.${table.entityPath}?.${field.propertyName}, 'HH:mm:ss') }"></td>
+                                            #else
+                                            <td class="form-group" th:text="${paramObj}${table.entityPath}?.${field.propertyName} }"></td>
+                                            #end
+                                        </tr>
+                                        #end
+                                        #end
+                                        #end
+
+                                        #if($columnsCount%2==1)
+                                            <td width="100px"></td>
+                                            <td class="form-group"></td>
+                                        </tr>
+                                        #end
+
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- PAGE CONTENT ENDS -->
+    </div>
+</div>
+
+</body>
+</html>

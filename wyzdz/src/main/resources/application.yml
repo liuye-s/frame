@@ -1,0 +1,84 @@
+server:
+  servlet:
+    session:
+      timeout: 864000 #单位秒，小于1分钟设置成1分钟
+  port: 8080
+spring:
+  session:
+    store-type: none
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss #指定日期返回格式
+    time-zone: GMT+8
+  thymeleaf:
+    mode: HTML5
+    cache: false
+    prefix: classpath:/templates/
+    encoding: UTF-8
+    suffix: .html
+  datasource:
+    name: druidDataSource
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/wyzdz?useSSL=false #开发环境
+    username: root
+    password: 123456
+
+    druid:
+      filters: stat,wall,slf4j,config
+      max-active: 20
+      initial-size: 10
+      max-wait: 60000
+      min-idle: 8
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      validation-query: select 'x'
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      pool-prepared-statements: true
+      max-open-prepared-statements: 50
+      max-pool-prepared-statement-per-connection-size: 20
+      web-stat-filter:
+        #是否启用StatFilter默认值false
+        enabled: true
+        url-pattern: "/*"
+        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,*.swf,/druid/*"
+        profile-enable: true
+  cache:
+    type: ehcache
+    ehcache:
+      config: classpath:/ehcache.xml
+
+
+
+mybatis-plus:
+  mapper-locations: classpath*:mybatis/mapper/**/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+
+
+#之定义配置
+jxtele:
+  security:
+    clientProperties:
+      signInPage: /signIn.html
+      signInResponseType: REDIRECT #REDIRECT #JSON
+      #登录成功URL
+      singInSuccessUrl: /index
+      #不需要登录认证的url，用','分割
+      permitUrl: /tree/*,/assets/**
+    rbacUserService: testEnterpriseUserServiceImpl
+    code:
+      image:
+        length: 4
+        width: 100
+        height: 60
+        expireIn: 300
+        url: /authentication/form
+      sms:
+        url:
+
+
+
+

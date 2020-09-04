@@ -1,0 +1,20 @@
+.form-group.has-error .error {
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    /*color: #737373;*/
+    color: #D16E6C;
+    text-align: left;
+}
+
+.form-group pre {
+    text-align: left;
+    border: 0px;
+    background-color: transparent;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    *word-wrap: break-word;
+    *white-space : normal ;
+}

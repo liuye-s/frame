@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:dic="" xmlns:tree="">
+<head th:replace="common/common-head :: common_header(~{::title},~{::link},~{::script},~{::style})">
+    <title>$!{table.comment}列表</title>
+    <link rel="stylesheet" href="/assets/css/chosen.min.css" />
+
+    <script src="/assets/js/jquery.validate.min.js"></script>
+    <script src="/assets/js/messages_zh.js"></script>
+
+    <script type="text/javascript" src="/assets/js/dictionary.js"></script>
+    <script type="text/javascript" src="/assets/js/cascadeSelect.js"></script>
+    <script type="text/javascript" src="/assets/js/date.js"></script>
+    <script type="text/javascript" src="/js/list.js"></script>
+    <style>
+
+    </style>
+
+
+    <!-- basic scripts -->
+
+
+    <!-- page specific plugin scripts -->
+    <script src="/assets/js/jquery.dataTables.min.js"></script>
+    <script src="/assets/js/jquery.dataTables.bootstrap.min.js"></script>
+    <script src="/assets/js/dataTables.buttons.min.js"></script>
+    <script src="/assets/js/buttons.flash.min.js"></script>
+    <script src="/assets/js/buttons.html5.min.js"></script>
+    <script src="/assets/js/buttons.print.min.js"></script>
+    <script src="/assets/js/buttons.colVis.min.js"></script>
+    <script src="/assets/js/dataTables.select.min.js"></script>
+
+    <script src="/assets/js/indextab.js"></script>
+
+    <!--<script src="/assets/js/chosen.jquery.min.js"></script>-->
+
+    <script type="text/javascript" src="/js/openDataTable.js"></script>
+
+    <!-- inline scripts related to this page -->
+    <script type="text/javascript">
+        var myTable;
+
+        jQuery(function($) {
+            $.fn.dataTable.ext.errMode = 'none';
+
+            $("#btnSearch").click(function () {
+                myTable.draw(true);
+            });
+
+            $("#btnAdd").click(function () {
+                edit("新增", "#if(${package.ModuleName})/${package.ModuleName}#end/#if(${controllerMappingHyphenStyle})${controllerMappingHyphen}#else${table.entityPath}#end/input", "#if(${package.ModuleName})/${package.ModuleName}#end/#if(${controllerMappingHyphenStyle})${controllerMappingHyphen}#else${table.entityPath}#end/save");
+            });
+
+            $("#btnDelete").click(function () {
+                #foreach($field in ${table.fields})
+                #if(${field.keyFlag})
+                delBatch("${field.propertyName}", "#if(${package.ModuleName})/${package.ModuleName}#end/#if(${controllerMappingHyphenStyle})${controllerMappingHyphen}#else${table.entityPath}#end/delete");
+                #break
+                #end
+                #end
+            });
+
+            init();
+
+        });
+
+        function init() {
+
+            var columns =[
+            #foreach($field in ${table.fields})
+            #if(${field.keyFlag})
+            {
+                width: '40px',
+                data : function(row, type, set, meta) {
+                    return $.fn.openDataTable.getDefaultCheckboxHtml("${field.propertyName}", row, type, set, meta);
+                }
+            }, 
+            #break
+            #end
+            #end
+            #foreach($field in ${table.fields})
+            #if(${cfg.listFieldNames.get(${field.name})})
+            {
+                data: "${field.propertyName}"
+            }, 
+            #end
+            #end
+            #foreach($field in ${table.fields})
+            #if(${field.keyFlag})
+            {
+                data:"${field.propertyName}",
+                width: '100px',
+                render:function(data){
+                    return $.fn.openDataTable.getDefaultOperationHtml(data, "#if(${package.ModuleName})/${package.ModuleName}#end/#if(${controllerMappingHyphenStyle})${controllerMappingHyphen}#else${table.entityPath}#end");
+                }
+            }
+            #break
+            #end
+            #end
+            ];
+
+            if (myTable) {
+                //myTable.destroy();
+                $("#dynamic-table").empty();
+            }
+
+            myTable = $("#dynamic-table").openDataTable({
+                urlNamespace: "#if(${package.ModuleName})/${package.ModuleName}#end/#if(${controllerMappingHyphenStyle})${controllerMappingHyphen}#else${table.entityPath}#end",
+                columns: columns
+            });
+
+        }
+
+    </script>
+
+</head>
+
+<body class="no-skin">
+#set($paramObj = "$" + "{data")
+    <form class="form-inline" role="form" id="listForm" action="" method="post">
+
+        <div class="search-label row no-margin-bottom ">
+            <div  id="search-content" >
+                #foreach($field in ${table.fields})
+                    #if(${cfg.queryFieldNames.get(${field.name})})
+                        <div class="form-group">
+                            <label for="">$!{field.comment}：</label>
+                            #if(${field.propertyType}=="String")
+                                <input type="text" id="${field.propertyName}" name="query.like.${field.propertyName}" class="form-control" th:value="${paramObj}['query.like.${field.propertyName}']}" />
+                            #else
+                                <input type="text" id="${field.propertyName}" name="query.eq.${field.propertyName}" class="form-control" th:value="${paramObj}['query.eq.${field.propertyName}']}" />
+                            #end
+                        </div>
+                    #end
+                #end
+                <div class="form-group btns">
+                    <button type="button" class="btn btn-info btn-default-ths btn-sm" id="btnSearch">
+                        <i class="ace-icon fa fa-search"></i>
+                        搜索
+                    </button>
+                    <button type="button" class="btn btn-sm btn-success btn-xs-ths" id="btnAdd" >
+                        <i class="ace-icon fa fa-plus"></i>
+                        添加
+                    </button>
+
+                </div>
+            </div>
+
+            <p class="collapse-btn" onclick="toggleSearchLabel(this)" >
+                <i class="icon iconfont icon-arrow-down" title="点击，展开查询条件"></i>
+            </p>
+        </div>
+
+        <div class="row search-wrap">
+
+            <div class="row ">
+                <div class="col-xs-12 ">
+                    <div class="table-btns-group">
+                        <button type="button" class="btn btn-sm btn-danger btn-xs-ths" id="btnDelete">
+                            <i class="ace-icon fa fa-trash-o"></i>
+                            删除
+                        </button>
+                    </div>
+
+                    <table id="dynamic-table" class="table table-striped table-bordered table-hover" >
+                        <thead>
+                            <tr>
+                                <th class="center">
+                                    <label class="pos-rel">
+                                        <input type="checkbox" id ="checkAll" class="ace"  />
+                                        <span class="lbl"></span>
+                                    </label>
+                                </th>
+                                #foreach($field in ${table.fields})
+                                #if(${cfg.listFieldNames.get(${field.name})})
+                                <th>$!{field.comment}</th>
+                                #end
+                                #end
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                     </table>
+
+                </div>
+            </div>
+
+        </div><!-- /.row -->
+    </form>
+    <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+        <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+    </a>
+</div><!-- /.page-content -->
+<script>
+    $(function(){
+        //表格顶部一排的操作按钮显示隐藏
+        toggleDatatableBtns();
+    });
+
+</script>
+</body>
+</html>

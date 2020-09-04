@@ -1,0 +1,212 @@
+package ${package.Controller};
+
+
+import org.springframework.security.core.Authentication;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+#if(${restControllerStyle})
+import org.springframework.web.bind.annotation.RestController;
+#else
+import org.springframework.stereotype.Controller;
+#end
+#if(${superControllerClassPackage})
+import ${superControllerClassPackage};
+#end
+
+## ------------- epp begin ---------------
+#if(${kotlin})
+#else
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.liuye.common.authorize.core.util.AuthUtil;
+import com.liuye.common.authorize.rbac.entities.CommonUser;
+import ${package.Entity}.${entity};
+import ${package.Service}.${table.serviceName};
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.util.*;
+#end
+## ------------- epp end ---------------
+
+/**
+ * <p>
+ * $!{table.comment} 前端控制器
+ * </p>
+ *
+ * @author ${author}
+ * @since ${date}
+ */
+#if(${restControllerStyle})
+@RestController
+#else
+@Controller
+#end
+@RequestMapping("#if(${package.ModuleName})/${package.ModuleName}#end/#if(${controllerMappingHyphenStyle})${controllerMappingHyphen}#else${table.entityPath}#end")
+#if(${kotlin})
+class ${table.controllerName}#if(${superControllerClass}) : ${superControllerClass}()#end
+
+#else
+#if(${superControllerClass})
+public class ${table.controllerName} extends ${superControllerClass} {
+#else
+public class ${table.controllerName} {
+#end
+
+## ------------- epp begin ---------------
+#if(${kotlin})
+#else
+    #set($servceImplObjName = ${table.serviceImplName.substring(0,1).toLowerCase()} + ${table.serviceImplName.substring(1)})
+    @Autowired
+    private ${table.serviceName} ${servceImplObjName};
+    
+    @ModelAttribute
+    public ${entity} get(@RequestParam(required = false) Long id) {
+        ${entity} entity = null;
+        if (id!=null) {
+            entity = ${servceImplObjName}.getById(id);
+        }
+        if (entity == null) {
+            entity = new ${entity}();
+        }
+        return entity;
+    }
+
+    @RequestMapping(value = "/list")
+    public ModelAndView list(@RequestParam Map<String, Object> data,
+                                    HttpServletRequest request, HttpServletResponse response) {
+        ModelAndView mav = new ModelAndView();
+
+        mav.addObject("data", data);
+        mav.setViewName("$!{package.ModuleName}/${entity}/list");
+
+        return mav;
+    }
+
+    @RequestMapping(value = "queryPage")
+    @ResponseBody
+    public Map<String, Object> queryPage(
+            @RequestParam Map<String, Object> data
+            , @RequestParam(required = false) Integer draw
+            , @RequestParam(required = false) Integer start
+            , @RequestParam(required = false) Integer length
+            , Authentication authentication
+            , HttpServletRequest request
+            , HttpServletResponse response) throws Exception {
+
+        if (start==null || start<0)
+            start = 0;
+        if (length==null || length<=0)
+            length = 10;
+
+        IPage<${entity}> page = new Page<${entity}>(start/length + 1, length);
+        #if(${logicDeleteFieldName})
+        #foreach($field in ${table.fields})
+        #if(${logicDeleteFieldName}==${field.name})
+        data.put("query.eq.${field.propertyName}", "0");
+        #end
+        #end
+        #end
+        page = ${servceImplObjName}.pageByFilter(page, data, null);
+
+        Map<String, Object> map = new HashMap<>();
+        map.put("draw", draw);
+        map.put("page", page);
+
+        return renderSuccessMap(map);
+    }
+
+    @RequestMapping(value = "/input")
+    public ModelAndView input(${entity} ${table.entityPath}, @RequestParam Map<String, Object> data,
+                             HttpServletRequest request, HttpServletResponse response) {
+        ModelAndView mav = new ModelAndView();
+
+        if (${table.entityPath}!=null)
+            data.put("${table.entityPath}", ${table.entityPath});
+        mav.addObject("data", data);
+        mav.setViewName("$!{package.ModuleName}/${entity}/input");
+
+        return mav;
+    }
+
+    @RequestMapping(value = "/show")
+    public ModelAndView show(${entity} ${table.entityPath}, @RequestParam Map<String, Object> data,
+                              HttpServletRequest request, HttpServletResponse response) {
+        ModelAndView mav = new ModelAndView();
+
+        if (${table.entityPath}!=null)
+            data.put("${table.entityPath}", ${table.entityPath});
+        mav.addObject("data", data);
+        mav.setViewName("$!{package.ModuleName}/${entity}/show");
+
+        return mav;
+    }
+
+    @RequestMapping(value = "delete")
+    @ResponseBody
+    public Map<String, Object> delete(
+            @RequestParam Long[] ids
+            , Authentication authentication
+            , HttpServletRequest request
+            , HttpServletResponse response) throws Exception {
+        if (ids!=null && ids.length>0) {
+            if (ids.length>1) {
+                List idList = Arrays.asList(ids);
+                ${servceImplObjName}.removeByIds(idList);
+            } else if (ids.length==1) {
+                ${servceImplObjName}.removeById(ids[0]);
+            }
+        }
+
+        return renderSuccess();
+    }
+
+    @RequestMapping(value = "save")
+    @ResponseBody
+    public Map<String, Object> save(
+            ${entity} ${table.entityPath}
+            , Authentication authentication
+            , HttpServletRequest request
+            , HttpServletResponse response) throws Exception {
+        CommonUser userInfo = AuthUtil.getUserInfo(authentication);
+
+        if (${table.entityPath}!=null) {
+            #foreach($field in ${table.fields})
+            #if(${field.keyFlag})
+                #if(${field.propertyType.equals("boolean")})
+                    #set($getprefix="is")
+                #else
+                    #set($getprefix="get")
+                #end
+            if (${table.entityPath}.${getprefix}${field.capitalName}()==null) {
+                #foreach($field1 in ${table.fields})
+                #if(${cfg.createUserIdFieldName}==${field1.name})
+                ${table.entityPath}.set${field1.capitalName}(Long.toString(userInfo.getCommonUserId()));
+                #end
+                #if(${cfg.createTimeFieldName}==${field1.name})
+                ${table.entityPath}.set${field1.capitalName}(new Date());
+                #end
+                #end
+            }
+            #else
+            #if(${cfg.updateUserIdFieldName}==${field.name})
+            ${table.entityPath}.set${field.capitalName}(Long.toString(userInfo.getCommonUserId()));
+            #end
+            #if(${cfg.updateTimeFieldName}==${field.name})
+            ${table.entityPath}.set${field.capitalName}(new Date());
+            #end
+            #end
+            #end
+            ${servceImplObjName}.saveOrUpdate(${table.entityPath});
+        }
+
+        return renderSuccess();
+    }
+#end
+## ------------- epp end ---------------
+
+}
+
+#end

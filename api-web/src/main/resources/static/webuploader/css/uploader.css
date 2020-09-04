@@ -1,0 +1,253 @@
+.wu-example{
+    text-align: left;
+    padding:5px 10px;
+    /*width:450px;*/
+}
+
+.picker {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 12px 0 0;
+    line-height: 10px;
+}
+.picker .webuploader-pick {
+    display: block;
+    padding:5px 8px;
+    margin:0;
+}
+.uploader-list {
+    width: 100%;
+    overflow: hidden;
+}
+.uploader-list .item h4, .uploader-list .item p {
+    font-size: 100%;
+    font-weight: normal;
+    display: inline-block;
+}
+.uploader-list .item h4.info {
+    /*max-width: 400px;*/
+    width:calc(100% - 170px - 20px - 5px); /*170为除了标题，其他元素宽度的总和,20为padding值，5为差值*/
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.uploader-list .item.readonly h4.info {
+    width:calc(100% - 80px - 20px - 5px); /*80为除了标题，其他元素宽度的总和,20为padding值，5为差值*/
+}
+.uploader-list .item h4.info a {
+    cursor: pointer;
+}
+.uploader-list .item p {
+    padding-left: 10px;
+}
+.uploader-list .item p.size {
+    color: #A3A3A3;
+    /*display: none;*/
+}
+.uploader-list .item p.state {
+    color: #A3A3A3;
+    font-style: italic;
+}
+.uploader-list .item p.state.err {
+    color: #EA5200;
+}
+.uploader-list .item p.del {
+    font-weight: bold;
+    cursor: pointer;
+    padding-left: 0;
+    margin-left: 5px;
+}
+.uploader-list .item p.rename {
+    font-weight: bold;
+    cursor: pointer;
+    background: url(/webuploader/images/pen.png) no-repeat;
+    background-position: 0px 5px;
+    padding-left: 0;
+    margin-left: 10px;
+    width: 10px;
+}
+
+.uploader-list .item h4.info,
+.uploader-list .item p.size,
+.uploader-list .item p.state,
+.uploader-list .item p.del{
+    margin-top:0;
+    margin-bottom:0;
+    padding:0;
+    height:20px;
+    line-height: 20px;
+    vertical-align: middle;
+    padding-right:5px;
+}
+.uploader-list .item p.preview,
+.uploader-list .item p.del{
+    vertical-align: middle;
+}
+
+
+
+.uploader-list div.file-item {
+    float: left;
+    position: relative;
+    margin: 0 20px 10px 0;
+    padding: 4px;
+}
+.uploader-list div.file-item.thumbnail {
+    width: 110px;
+    height: 110px;
+}
+.uploader-list div.file-item.thumbnail img {
+    width: 100%;
+    height: 100%;
+}
+.uploader-list div.file-item .info {
+    position: absolute;
+    left: 4px;
+    bottom: 4px;
+    right: 4px;
+    height: 0px;
+    line-height: 20px;
+    text-indent: 5px;
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 12px;
+    z-index: 10;
+    overflow: hidden;
+}
+.uploader-list div.file-item .info a {
+    color: white;
+}
+
+.uploader-list div.file-item p.size {
+    /*display: none;*/
+}
+
+  .uploader-list div.file-item .error {
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      right: 4px;
+      background: red;
+      color: white;
+      text-align: center;
+      height: 20px;
+      font-size: 14px;
+      line-height: 23px;
+  }
+.uploader-list div.file-item .del {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    background: rgba(0, 0, 0, 0.2);
+    color: white;
+    text-align: right;
+    height: 0;
+    font-size: 14px;
+    line-height: 23px;
+    padding-right: 5px;
+    /* cursor: pointer; */
+    z-index: 300;
+    overflow: hidden;
+
+}
+.uploader-list div.file-item .del span {
+    cursor: pointer;
+    z-index: 300;
+}
+
+.uploader-list .progress {
+    background-image: -webkit-linear-gradient(top,#ebebeb 0,#f5f5f5 100%);
+    background-image: linear-gradient(to bottom,#ebebeb 0,#f5f5f5 100%);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffebebeb',endColorstr='#fff5f5f5',GradientType=0);
+}
+.uploader-list .progress {
+    height: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+}
+.uploader-list .progress.active .progress-bar {
+    -webkit-animation: progress-bar-stripes 2s linear infinite;
+    animation: progress-bar-stripes 2s linear infinite;
+}
+.uploader-list .progress-striped .progress-bar {
+    background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
+    background-image: linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
+    background-size: 40px 40px;
+}
+.uploader-list .progress-bar {
+    background-image: -webkit-linear-gradient(top,#428bca 0,#3071a9 100%);
+    background-image: linear-gradient(to bottom,#428bca 0,#3071a9 100%);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff428bca',endColorstr='#ff3071a9',GradientType=0);
+}
+.uploader-list .progress-bar {
+    float: left;
+    width: 0;
+    height: 100%;
+    font-size: 12px;
+    line-height: 20px;
+    color: #fff;
+    text-align: center;
+    background-color: #428bca;
+    -webkit-box-shadow: inset 0 -1px 0 rgba(0,0,0,0.15);
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,0.15);
+    -webkit-transition: width .6s ease;
+    transition: width .6s ease;
+}
+
+.uploader-list.image-list .file-item .progress {
+    position: absolute;
+    right: 4px;
+    bottom: 4px;
+    height: 3px;
+    left: 4px;
+    height: 4px;
+    overflow: hidden;
+    z-index: 15;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+}
+.uploader-list.image-list .file-item .progress span {
+    display: block;
+    overflow: hidden;
+    width: 0;
+    height: 100%;
+    background: #d14 url(../images/progress.png) repeat-x;
+    -webit-transition: width 200ms linear;
+    -moz-transition: width 200ms linear;
+    -o-transition: width 200ms linear;
+    -ms-transition: width 200ms linear;
+    transition: width 200ms linear;
+    -webkit-animation: progressmove 2s linear infinite;
+    -moz-animation: progressmove 2s linear infinite;
+    -o-animation: progressmove 2s linear infinite;
+    -ms-animation: progressmove 2s linear infinite;
+    animation: progressmove 2s linear infinite;
+    -webkit-transform: translateZ(0);
+}
+
+.uploader-list .item p.preview {
+    font-weight: bold;
+    cursor: pointer;
+    background: url(/webuploader/images/view.png) no-repeat;
+    /*background-position: 0px 5px;*/
+    padding-left: 0;
+    margin-left: 10px;
+    width: 16px;
+    height: 16px;
+}
+
+.webuploader-container {
+    line-height: normal;
+}
