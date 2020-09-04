@@ -1,6 +1,7 @@
 package com.liuye.security.rbac.service.impl;
 
 import com.liuye.security.rbac.service.RbacUserService;
+import org.springframework.context.annotation.DependsOn;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;

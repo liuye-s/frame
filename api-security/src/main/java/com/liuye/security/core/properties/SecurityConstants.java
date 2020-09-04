@@ -55,5 +55,5 @@ public interface SecurityConstants {
     /**
      * 默认RBAC用户生成服务实现类
      */
-    String DEFAULT_RBAC_USER_SERVICE = "rbacUserServiceImpl";
+    String DEFAULT_RBAC_USER_SERVICE = "baseUserServiceImpl";
 }

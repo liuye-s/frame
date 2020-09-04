@@ -10,6 +10,7 @@ import com.liuye.security.rbac.service.impl.BaseUserServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.DependsOn;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -24,22 +25,21 @@ import org.springframework.transaction.annotation.Transactional;
  **/
 @Component
 @Transactional
+@DependsOn("springContextUtil")
 public class RbacUserDetailService  implements UserDetailsService {
 
     @Autowired
     private SecurityProperties securityProperties;
 
     private RbacUserService rbacUserService;
-
     public RbacUserDetailService(SecurityProperties securityProperties) {
         this.securityProperties = securityProperties;
         try {
-//            this.rbacUserService = SpringContextUtil.getBean( BaseUserServiceImpl.class);
-            this.rbacUserService = new BaseUserServiceImpl();
+            this.rbacUserService = SpringContextUtil.getBean(securityProperties.getRbacUserService(), RbacUserService.class);
+//            this.rbacUserService = new BaseUserServiceImpl();
         } catch (Exception ex) {
             this.rbacUserService = SpringContextUtil.getBean(SecurityConstants.DEFAULT_RBAC_USER_SERVICE, RbacUserService.class);
         }
-
     }
 
     @Override

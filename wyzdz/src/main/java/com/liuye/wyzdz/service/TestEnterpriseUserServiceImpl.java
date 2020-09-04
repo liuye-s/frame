@@ -20,7 +20,7 @@ public class TestEnterpriseUserServiceImpl implements RbacUserService {
     public UserDetails findUser(String username) throws UsernameNotFoundException {
 
         TestUsers testUsers = new TestUsers();
-        testUsers.setUsername("admin");
+        testUsers.setUsername("admin1");
         testUsers.setPassword("e10adc3949ba59abbe56e057f20f883e");
 
         return testUsers;
