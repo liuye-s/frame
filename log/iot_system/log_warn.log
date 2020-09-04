@@ -38,3 +38,5 @@
 ===2020-09-04 16:00:44.216 WARN  org.thymeleaf.templatemode.TemplateMode Line:150 - [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
 ===2020-09-04 16:01:03.925 WARN  com.baomidou.mybatisplus.core.toolkit.TableInfoHelper Line:255 - Warn: Could not find @TableId in Class: com.liuye.wyzdz.entities.Test1.
 ===2020-09-04 16:01:04.320 WARN  org.thymeleaf.templatemode.TemplateMode Line:150 - [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+===2020-09-04 16:08:46.581 WARN  org.mybatis.spring.mapper.ClassPathMapperScanner Line:44  - No MyBatis mapper was found in '[com.liuye]' package. Please check your configuration.
+===2020-09-04 16:08:47.970 WARN  org.thymeleaf.templatemode.TemplateMode Line:150 - [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.

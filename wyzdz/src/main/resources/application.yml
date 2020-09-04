@@ -19,7 +19,7 @@ spring:
     name: druidDataSource
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/wyzdz?useSSL=false #开发环境
+    url: jdbc:mysql://127.0.0.1:3306/wyzdz?useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC #开发环境
     username: root
     password: 123456
 
