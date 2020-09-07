@@ -17,4 +17,5 @@ import org.springframework.stereotype.Repository;
 @Mapper
 public interface ClientUserInfoMapper extends BaseMapper<ClientUserInfo> {
 
+    public ClientUserInfo getDetailInfo(Long id);
 }

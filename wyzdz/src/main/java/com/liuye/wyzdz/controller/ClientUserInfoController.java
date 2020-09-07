@@ -47,6 +47,18 @@ public class ClientUserInfoController extends BaseController {
         return entity;
     }
 
+    @RequestMapping(value = "/getDetailInfo")
+    public @ResponseBody ClientUserInfo getDetailInfo(@RequestParam(required = false) Long id) {
+        ClientUserInfo entity = null;
+        if (id!=null) {
+            entity = clientUserInfoServiceImpl.getDetailInfo(id);
+        }
+        if (entity == null) {
+            entity = new ClientUserInfo();
+        }
+        return entity;
+    }
+
     @RequestMapping(value = "/list")
     public ModelAndView list(@RequestParam Map<String, Object> data,
                                     HttpServletRequest request, HttpServletResponse response) {

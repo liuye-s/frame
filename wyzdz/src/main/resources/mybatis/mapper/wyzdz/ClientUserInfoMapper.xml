@@ -2,4 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.liuye.wyzdz.dao.ClientUserInfoMapper">
 
+    <select id="getDetailInfo"
+            resultType="com.liuye.wyzdz.entities.ClientUserInfo">
+        SELECT * FROM client_user_info WHERE id = #{id}
+    </select>
+
 </mapper>
