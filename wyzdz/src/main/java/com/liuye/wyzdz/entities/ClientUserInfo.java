@@ -1,6 +1,9 @@
 package com.liuye.wyzdz.entities;
 
 import java.util.Date;
+
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.liuye.common.entities.BaseEntity;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.FieldStrategy;
@@ -27,6 +30,9 @@ public class ClientUserInfo extends BaseEntity {
 
     private static final long serialVersionUID = 1L;
 
+
+    @TableId(value = "id", type = IdType.AUTO)
+    private Long id;
     /**
      * 昵称
      */
